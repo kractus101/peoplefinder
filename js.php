@@ -1,28 +1,3 @@
-<?php
-$connect=mysqli_connect("localhost","root","","coursera");
-if(isset($_POST["insert"]))
-{
-    $file= addcslashes(file_get_contents($_FILES["image"]["tmp_name"]));
-    $query= "INSERT INTO register VALUES ('$file')";
-    if(mysqli_query($connect,$query))
-    {
-        echo '<script>alert("Ïmage inserted into Database!")</script>';
-
-    }
-}
-
-
-?>
-
-
-
-
-
-
-
-
-
-
 <html>
 <head>
 <title>javascript</title>
@@ -58,9 +33,8 @@ if(isset($_POST["insert"]))
 	<input type="text" id="lname" name="lname" required><br><br>
 	<label for="email">Email:</label><br>
 	<input type="email" id="email" name="email" required><br>
-	<label for="image" multiple>Insert your picture:</label> 
-    <input type="file" id="image"><br>
-	<input type="submit" name="insert" value="insert">
+    <input type="file" name="file"><br>
+	<input type="submit" name="insert" >
 </form> 
 
 <script type="text/javascript">
@@ -82,6 +56,8 @@ function myFunction1()
   document.getElementById("demo3").innerHTML = result;
 	}
 
+
+	
 
 
 </script>
